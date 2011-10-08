@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Binary file name:</b>
+  <%= @image.binary_file_name %>
+</p>
+
+<p>
+  <b>Binary content type:</b>
+  <%= @image.binary_content_type %>
+</p>
+
+<p>
+  <b>Binary file size:</b>
+  <%= @image.binary_file_size %>
+</p>
+
+<p>
+  <b>Binary updated at:</b>
+  <%= @image.binary_updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
