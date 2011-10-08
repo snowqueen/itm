@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005220443) do
+ActiveRecord::Schema.define(:version => 20111008172747) do
 
   create_table "images", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 20111005220443) do
     t.string   "binary_content_type"
     t.integer  "binary_file_size"
     t.datetime "binary_updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "summary"
+    t.text     "content"
+    t.boolean  "published"
+    t.date     "publish_date"
+    t.string   "slug"
+    t.boolean  "comments_allowed"
+    t.integer  "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @post.summary %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p>
+  <b>Published:</b>
+  <%= @post.published %>
+</p>
+
+<p>
+  <b>Publish date:</b>
+  <%= @post.publish_date %>
+</p>
+
+<p>
+  <b>Slug:</b>
+  <%= @post.slug %>
+</p>
+
+<p>
+  <b>Comments allowed:</b>
+  <%= @post.comments_allowed %>
+</p>
+
+
+<%= link_to 'Back', posts_path %>

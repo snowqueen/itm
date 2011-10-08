@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     if user = User.authenticate(params[:name], params[:password])
       session[:user_id] = user.id
       if user.admin?
-        redirect_to admin_url
+        redirect_to admin_root_url
       else
         redirect_to page_url
       end

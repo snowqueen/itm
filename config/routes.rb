@@ -1,8 +1,15 @@
 Itm::Application.routes.draw do
 
-  resources :images
+  namespace 'admin' do
+    resources :posts
+    resources :images
 
-  get 'admin' => 'admin#index'
+    root :to => 'dashboard#index'
+  end
+
+  resources :posts, :only => [:index, :show]
+
+  #get 'admin' => 'dashboard#index'
 
   controller :sessions do
     get 'login' => :new
