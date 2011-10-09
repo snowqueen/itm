@@ -1,15 +1,17 @@
 Itm::Application.routes.draw do
 
-  resources :comments
+  
 
   namespace 'admin' do
     resources :posts
     resources :images
-
+    resources :comments
+    
     root :to => 'dashboard#index'
   end
 
   resources :posts, :only => [:index, :show]
+  resources :comments, :except => [:index]
 
   #get 'admin' => 'dashboard#index'
 
@@ -20,6 +22,8 @@ Itm::Application.routes.draw do
   end
 
   get 'page' => 'page#index'
+
+  get "page(/:category)" => 'page#index' #{:controller => 'page', :action => 'index'}
 
   resources :users
 

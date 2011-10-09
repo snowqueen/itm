@@ -2,9 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Itm</title>
+    <title>Itm - <%= controller.controller_name %>/<%= controller.action_name %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
+    <% if controller.controller_name == 'posts' %>
+      <script type="text/javascript" src="/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script>
+      <script type="text/javascript">
+        startTinyMCE();
+      </script>
+    <% end %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -132,7 +138,7 @@
     <!-- end #footer -->
     <script type="text/javascript" >
       $(document).ready(function () {
-        $("#calendar").html("<applet code = 'CalendarApplet', archive = 'itm-calendar.jar', width = 276 />");
+        $("#calendar").html("<applet code = 'CalendarApplet', archive = '/itm-calendar.jar', width = 276 />");
       });
     </script>
   </body>
