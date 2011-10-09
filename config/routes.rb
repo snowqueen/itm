@@ -1,5 +1,7 @@
 Itm::Application.routes.draw do
 
+  resources :comments
+
   namespace 'admin' do
     resources :posts
     resources :images

@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   after_destroy :ensure_an_admin_remains
 
+  has_many :comments
+
   def password=(password)
     @password = password
 
