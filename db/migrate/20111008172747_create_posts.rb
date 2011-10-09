@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.date :publish_date
       t.string :slug
       t.boolean :comments_allowed
-      t.integer :author
+      t.integer :author_id
 
       t.timestamps
     end

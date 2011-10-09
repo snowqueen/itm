@@ -4,6 +4,11 @@ class PageController < ApplicationController
 
   def index
     @category = params[:category]
+    if @category
+      @posts = Post.where(:category => @category)
+    else
+      @posts = Post.all
+    end
   end
 
 end

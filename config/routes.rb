@@ -10,8 +10,9 @@ Itm::Application.routes.draw do
     root :to => 'dashboard#index'
   end
 
-  resources :posts, :only => [:index, :show]
-  resources :comments, :except => [:index]
+  resources :posts, :only => [:index, :show], :shallow => true do
+    resources :comments, :except => [:index]
+  end
 
   #get 'admin' => 'dashboard#index'
 
