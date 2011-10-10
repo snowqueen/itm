@@ -7,8 +7,10 @@
     <p><%= @post.content.html_safe %></p>
   </div>
 </div>
+<a id="comments"></a>
 <% if @post.comments_allowed? %>
   <div class="comment">
+    <p>Hozzászólások</p>
     <ol class="commentlist">
       <% @post.comments.each do |comment| %>
         <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
@@ -16,15 +18,18 @@
         </li>
       <% end %>
     </ol>
-    <%= form_for([@post, @comment]) do |f| %>
-      <div>
-        <div class="field">
-          <%= f.label :content %><br />
-          <%= f.text_area :content %>
+    <% if @current_user %>
+      <%= form_for([@post, @comment]) do |f| %>
+        <div>
+          <div class="field">
+            <%= f.text_area :content %>
+          </div>
+          <p><%= submit_tag "Add Comment" %></p>
         </div>
-        <p><%= submit_tag "Add Comment" %></p>
-      </div>
-    <% end -%>
+      <% end %>
+    <% else %>
+      A kommenteléshez be kell <%= link_to 'jelentkezned', login_path %>!
+    <% end %>
   </div>
 <% end %>
 

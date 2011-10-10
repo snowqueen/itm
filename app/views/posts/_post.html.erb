@@ -4,6 +4,6 @@
   <div style="clear: both;">&nbsp;</div>
   <div class="entry">
     <%= post.summary.html_safe %>
-    <p class="links"><%= link_to 'Tovább', post %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Comments</a></p>
+    <p class="links"><%= link_to 'Tovább', post %>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Hozzászólások', post_path(post, :anchor => 'comments') %></p>
   </div>
 </div>

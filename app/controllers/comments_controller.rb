@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
- 
+
+  skip_before_filter :authorize
+
   # GET /comments/1
   # GET /comments/1.json
   def show

@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
+
+  skip_before_filter :authorize
+
   # GET /posts
   # GET /posts.json
   def index
-    #@posts = Post.all
     redirect_to root_path
   end
 

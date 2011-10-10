@@ -5,7 +5,7 @@
     <title>Itm - <%= controller.controller_name %>/<%= controller.action_name %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
-    <% if controller.controller_name == 'posts' %>
+    <% if controller.controller_path == 'admin/posts' %>
       <script type="text/javascript" src="/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script>
       <script type="text/javascript">
         startTinyMCE();
