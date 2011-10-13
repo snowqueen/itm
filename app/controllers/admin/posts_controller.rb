@@ -25,6 +25,12 @@ class Admin::PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
+    @categories = []
+    Post.select("distinct category").each do |p|
+      if p.category
+        @categories << p.category
+      end
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +41,12 @@ class Admin::PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @categories = []
+    Post.select("distinct category").each do |p|
+      if p.category
+        @categories << p.category
+      end
+    end
   end
 
   # POST /posts
@@ -61,7 +73,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

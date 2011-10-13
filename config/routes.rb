@@ -4,7 +4,6 @@ Itm::Application.routes.draw do
 
   namespace 'admin' do
     resources :posts
-    resources :images
     resources :comments
     
     root :to => 'dashboard#index'
@@ -26,6 +25,7 @@ Itm::Application.routes.draw do
 
   get "page(/:category)" => 'page#index' #{:controller => 'page', :action => 'index'}
 
+  resources :images
   resources :users
 
   get 'register' => 'users#new'

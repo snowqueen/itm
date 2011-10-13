@@ -39,7 +39,11 @@
     <%= f.label :comments_allowed %><br />
     <%= f.check_box :comments_allowed %>
   </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, Post::CATEGORIES %>
+  </div>
   <div class="actions">
-    <%= f.submit 'New post!'%>
+    <%= f.submit 'Mentés'%>
   </div>
 <% end %>

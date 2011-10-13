@@ -1,4 +1,7 @@
+# encoding: utf-8
 class Post < ActiveRecord::Base
+
+  CATEGORIES = ['Hírek', 'Önkormányzat', 'Turizmus', 'Közérdekű', 'Teszt']
 
   belongs_to :author, :class_name => 'User'
 

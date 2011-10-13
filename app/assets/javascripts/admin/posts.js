@@ -17,7 +17,8 @@ function startTinyMCE () {
         skin_variant : "silver",
 
         // Example content CSS (should be your site CSS)
-        content_css : "theme.css",
+        content_css : "/assets/posts.css",
+        body_class : "post",
         widht : "580"
 
     // Drop lists for link/image/media/template dialogs
