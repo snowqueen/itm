@@ -16,8 +16,12 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, Post::CATEGORIES %>
+  </div>
+  <div class="field">
     <%= f.label :summary %><br />
-    <%= f.text_field :summary %>
+    <%= f.text_area :summary %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
@@ -32,17 +36,10 @@
     <%= f.date_select :publish_date %>
   </div>
   <div class="field">
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
     <%= f.label :comments_allowed %><br />
     <%= f.check_box :comments_allowed %>
   </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.select :category, Post::CATEGORIES %>
-  </div>
+  
   <div class="actions">
     <%= f.submit 'Mentés'%>
   </div>

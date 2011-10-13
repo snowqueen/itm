@@ -3,7 +3,7 @@
   <p class="meta"><span class="date"><%= @post.publish_date %></span><span class="posted">Posted by <a href="#"><%= @post.author.name %></a></span></p>
   <div style="clear: both;">&nbsp;</div>
   <div class="entry">
-    <p><strong><%= @post.summary %></strong></p>
+    <p><strong><%= @post.summary.html_safe %></strong></p>
     <p><%= @post.content.html_safe %></p>
   </div>
 </div>
@@ -22,7 +22,7 @@
       <%= form_for([@post, @comment]) do |f| %>
         <div>
           <div class="field">
-            <%= f.text_area :content %>
+            <%= f.text_area :content, :cols => 80, :rows => 8 %>
           </div>
           <p><%= submit_tag "Add Comment" %></p>
         </div>

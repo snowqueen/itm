@@ -5,9 +5,9 @@ class PageController < ApplicationController
   def index
     @category = params[:category]
     if @category
-      @posts = Post.where(:category => @category)
+      @posts = Post.published.with_category(@category)
     else
-      @posts = Post.all
+      @posts = Post.published
     end
   end
 
