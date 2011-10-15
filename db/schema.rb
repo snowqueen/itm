@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(:version => 20111009194934) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
-    t.string   "summary"
+    t.text     "summary"
     t.text     "content"
     t.boolean  "published"
     t.date     "publish_date"
     t.string   "slug"
     t.boolean  "comments_allowed"
-    t.integer  "author"
+    t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
