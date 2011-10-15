@@ -1,10 +1,31 @@
 <h1>Listing posts</h1>
 
+<div id="post-list">
+    <% @posts.each do |post| %>
+        <div class="admin-post">
+            <div class="header">
+                <span class="title"><%= post.title %></span>
+                <span class="category">(<%= post.category %>)</span>
+                <%= publish_label(post.published) do %> 
+                    <%= post.published ? "publikált" : "nem publikált" %>
+                <% end %>
+            </div>
+            <div class="summary">
+                <%= post.summary.html_safe %>
+            </div>
+            <div class="buttons">
+            <%= link_to 'Show', [:admin, post] %> | 
+            <%= link_to 'Edit', edit_admin_post_path(post) %> |
+            <%= link_to 'Destroy', [:admin, post], confirm: 'Are you sure?', method: :delete %>
+            </div>
+        </div>
+    <% end %>
+</div>
+
 <table>
   <tr>
     <th>Title</th>
     <th>Summary</th>
-    <th>Content</th>
     <th>Published</th>
     <th>Publish date</th>
     <th>Slug</th>
@@ -17,8 +38,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= truncate(post.summary, :length => 40, :omission => "..." ) %></td>
-    <td><%= truncate(post.content, :length => 40, :omission => "..." ) %></td>
+    <td><%= truncate(strip_tags(post.summary), :length => 50, :omission => "..." ).html_safe %></td>
     <td><%= post.published %></td>
     <td><%= post.publish_date %></td>
     <td><%= post.slug %></td>
@@ -33,3 +53,4 @@
 <br />
 
 <%= link_to 'New Post', new_admin_post_path %>
+<!--div style="clear: both;">&nbsp;</div-->

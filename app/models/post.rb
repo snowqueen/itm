@@ -1,4 +1,4 @@
-# encoding: utf-8
+# coding: utf-8
 class Post < ActiveRecord::Base
 
   CATEGORIES = ['Hírek', 'Önkormányzat', 'Turizmus', 'Közérdekű', 'Teszt']
@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   has_many :comments
 
-  scope :published, where('published = 1 and publish_date < ?', Time.now).order("publish_date DESC")
+  scope :published, where('published = ? and publish_date < ?', true, Time.now).order("publish_date DESC")
 
   scope :with_category, lambda { |category| where('category = ?', category) }
 
