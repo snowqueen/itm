@@ -1,3 +1,6 @@
+<% if params[:category] %>
+  <h1 class="category-title"><%= params[:category] %></h1>
+<% else %>
   <div class="post">
     <h2 class="title"><a href="#">Find me in app/views/page/index.html.erb</a></h2>
     <p class="meta"><span class="date">September 10, 2009</span><span class="posted">Posted by <a href="#">Someone</a></span></p>
@@ -8,7 +11,9 @@
       <p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Comments</a></p>
     </div>
   </div>
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
-  <div style="clear: both;">&nbsp;</div>
+<% end %>
+
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>
+<div style="clear: both;">&nbsp;</div>
