@@ -9,9 +9,11 @@ Itm::Application.routes.draw do
     root :to => 'dashboard#index'
   end
 
-  resources :posts, :only => [:index, :show], :shallow => true do
+  resources :posts, :only => [:index, :show] do
     resources :comments, :except => [:index]
   end
+
+  #put "/comments/:comment_id(.:format)", :controller => :comments, :action => :update, :as => 'post_comment'
 
   #get 'admin' => 'dashboard#index'
 

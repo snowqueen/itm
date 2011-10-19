@@ -1,1 +1,10 @@
-<%= comment.content.html_safe %>
+<h4>
+  <span class="comment-author"><%= comment.user.name %></span>
+  <span class="comment-time"><%= l comment.updated_at, :format => :long %></span>
+</h4>
+<div class="comment-body"><%= h comment.content %></div>
+<div class="comment-footer">
+  <% if @current_user == comment.user %>
+    <%= link_to 'Szerkesztés', edit_post_comment_path(comment.post,comment) %>
+  <% end %>
+</div>

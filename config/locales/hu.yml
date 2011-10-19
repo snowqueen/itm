@@ -63,7 +63,7 @@
     formats:
       default: "%Y. %b %e., %H:%M"
       short: "%b %e., %H:%M"
-      long: "%Y. %B %e., %A, %H:%M"
+      long: "%Y. %B %e., %A, %H:%M:%S"
     am: "de."
     pm: "du."
 

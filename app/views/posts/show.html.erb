@@ -9,24 +9,21 @@
 </div>
 <a id="comments"></a>
 <% if @post.comments_allowed? %>
-  <div class="comment">
+  <div class="comment-box">
     <p>Hozzászólások</p>
-    <ol class="commentlist">
+    <ol class="comment-list">
       <% @post.comments.each do |comment| %>
         <li<%=raw cycle(' class="alt"', '') %> id="comment-<%= comment.id %>">
-          <%= render comment %>
+          <% if params[:edit_comment] && params[:edit_comment].to_i == comment.id %>
+            <%= render :partial => 'comments/form' %>
+          <% else %>
+            <%= render comment %>
+          <% end %>
         </li>
       <% end %>
     </ol>
     <% if @current_user %>
-      <%= form_for([@post, @comment]) do |f| %>
-        <div>
-          <div class="field">
-            <%= f.text_area :content, :cols => 80, :rows => 8 %>
-          </div>
-          <p><%= submit_tag "Add Comment" %></p>
-        </div>
-      <% end %>
+      <%= render :partial => 'comments/form' unless params[:edit_comment] %>
     <% else %>
       A kommenteléshez be kell <%= link_to 'jelentkezned', login_path %>!
     <% end %>
