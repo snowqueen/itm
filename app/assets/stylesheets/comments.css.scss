@@ -18,6 +18,10 @@
     /*border-bottom: 1px solid gray;*/
 }
 
+li form.comment_input {
+    padding-left: 0px;
+}
+
 .comment-body {
     margin-bottom: 10px;
 }
@@ -28,4 +32,13 @@
 
 .comment_input {
     padding-left: 40px;
+}
+
+.comment-modified {
+    font-size: 75%;
+}
+
+#comment_content {
+    width: 535px;
+    height: 10em;
 }

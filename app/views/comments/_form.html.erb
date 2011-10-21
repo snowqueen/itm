@@ -1,7 +1,7 @@
 <%= form_for([@post, @comment], :html => {:class => "comment_input"}) do |f| %>
   <div>
     <div class="field">
-      <%= f.text_area :content, :cols => 74, :rows => 8 %>
+      <%= f.text_area :content %>
     </div>
     <p><%= submit_tag "Add Comment" %></p>
   </div>

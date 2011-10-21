@@ -1,5 +1,8 @@
 <h4>
   <span class="comment-author"><%= comment.user.name %></span>
+  <% if comment.created_at != comment.updated_at %>
+    <span class="comment-modified">(szerkesztve)</span>
+  <% end %>
   <span class="comment-time"><%= l comment.updated_at, :format => :long %></span>
 </h4>
 <div class="comment-body"><%= h comment.content %></div>
