@@ -3,6 +3,6 @@
     <div class="field">
       <%= f.text_area :content %>
     </div>
-    <p><%= submit_tag "Add Comment" %></p>
+    <p><%= submit_tag "Add Comment" %></p><p><%= link_to 'Mégse', post_path(@post, :anchor => "comment-#{@comment.id}") %></p>
   </div>
 <% end %>
