@@ -213,4 +213,19 @@
         <<: *errors_messages
       full_messages:
         format: "%{attribute} %{message}"
+  will_paginate:
+    previous_label: "&#8592; Előző"
+    next_label: "Következő &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "Nincsenek oldalak"
+        one:   "1 oldal látható"
+        other: "Mind a(z) %{count} oldal látható"
+      single_page_html:
+        zero:  "Nincsenek oldalak"
+        one:   "<b>1</b> oldal látható"
+        other: "Mind a(z) <b>%{count}</b> oldal látható"
 
+      multi_page: "%{from} - %{to} oldal a(z) %{count} oldalból"
+      multi_page_html: "<b>%{from}&nbsp;-&nbsp;%{to}</b> oldal a(z) <b>%{count}</b> oldalból"

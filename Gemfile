@@ -37,4 +37,4 @@ end
 gem 'execjs'
 gem 'therubyracer'
 
-gem 'will_paginate', '>= 3.0.pre'
+gem 'will_paginate', '~> 3.0.2'
