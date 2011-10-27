@@ -1,8 +1,12 @@
 Keresési eredmények: <%= @search_param %>
 
-<% @posts.each do |post| %>
-  <%= render post %>
+<% if @posts && !@posts.empty?%>
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+  <div style="clear: both;">&nbsp;</div>
+  <%= page_entries_info @posts %>
+  <p><%= will_paginate @posts %></p>
+<% else %>
+  <div>Nincs a keresésnek megfelelő oldal!</div>
 <% end %>
-<div style="clear: both;">&nbsp;</div>
-<%= page_entries_info @posts %>
-<p><%= will_paginate @posts %></p>
