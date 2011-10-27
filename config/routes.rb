@@ -1,6 +1,6 @@
-Itm::Application.routes.draw do
+Itm::Application.routes.draw do 
 
-  
+  get "search/index"
 
   namespace 'admin' do
     resources :posts

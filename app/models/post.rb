@@ -22,5 +22,15 @@ class Post < ActiveRecord::Base
     self.slug = self.title.dup if self.slug.blank?
     self.slug.slugorize!
   end
+
+  def self.search(query)
+    if !query.to_s.strip.empty?
+      tokens = query.split.collect {|c| "%#{c.downcase}%"}
+      #find_by_sql(["select p.* from posts p where published = ? and publish_date < ? and (#{ (["(lower(p.title) like ? or lower(p.summary) like ? or lower(p.content) like ?)"] * tokens.size).join(" or ") }) order by p.created_at desc", true, Time.now, *(tokens * 3).sort])
+      where(["#{ (["(lower(title) like ? or lower(summary) like ? or lower(content) like ?)"] * tokens.size).join(" or ") }", *(tokens * 3).sort]).published
+    else
+      []
+    end
+  end
   
 end
