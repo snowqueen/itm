@@ -5,3 +5,8 @@ tmp/
 .sass-cache/
 nbproject/
 public/system
+.classpath
+.project
+.settings
+bin/
+
