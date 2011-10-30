@@ -11,7 +11,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    if params[:id] 
+      @post = Post.find(params[:id])
+    elsif params[:slug]
+      @post = Post.where("slug = ?", params[:slug]).first
+    end
     if params[:edit_comment]
       @comment = Comment.find(params[:edit_comment])
     else

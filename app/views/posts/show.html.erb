@@ -1,6 +1,7 @@
 <div class="post">
-  <h2 class="title"><%= link_to @post.title, @post %></h2>
-  <p class="meta"><span class="date"><%= @post.publish_date %></span><span class="posted">Posted by <a href="#"><%= @post.author.name %></a></span></p>
+  <h2 class="title"><%= link_to @post.title, slug_path(@post) %></h2>
+  <p class="meta"><span class="date"><%= l(@post.publish_date, :format => :long) %></span><span class="posted">Posted by <a href="#"><%= @post.author.name %></a></span></p>
+  <%= link_to 'Szerkesztés', edit_admin_post_path(@post), :class => "admin-edit" if @current_user && @current_user.admin? %>
   <div style="clear: both;">&nbsp;</div>
   <div class="entry">
     <p><strong><%= @post.summary.html_safe %></strong></p>
@@ -30,4 +31,4 @@
   </div>
 <% end %>
 
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', page_path %>

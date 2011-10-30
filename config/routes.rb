@@ -12,8 +12,8 @@ Itm::Application.routes.draw do
   resources :posts, :only => [:index, :show] do
     resources :comments, :except => [:index]
   end
-
-  #put "/comments/:comment_id(.:format)", :controller => :comments, :action => :update, :as => 'post_comment'
+  
+  get "post/:slug" => 'posts#show', :as => :post_slug
 
   #get 'admin' => 'dashboard#index'
 

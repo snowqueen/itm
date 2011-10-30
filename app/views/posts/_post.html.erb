@@ -1,12 +1,12 @@
 <div class="post">
-  <h2 class="title"><%= link_to post.title, post %></h2>
+  <h2 class="title"><%= link_to post.title, slug_path(post) %></h2>
   <p class="meta"><span class="date"><%= l(post.publish_date, :format => :long) %></span><span class="posted">Posted by <a href="#"><%= post.author.name %></a></span></p>
   <div style="clear: both;">&nbsp;</div>
   <div class="entry">
     <%= post.summary.html_safe %>
-    <p class="links"><%= link_to 'Tovább', post %>
+    <p class="links"><%= link_to 'Tovább', slug_path(post) %>
     <% if post.comments_allowed? %>
-      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Hozzászólások', post_path(post, :anchor => 'comments') %>
+      &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Hozzászólások', slug_path(post, :anchor => 'comments') %>
     <% end %>
     </p>
   </div>
