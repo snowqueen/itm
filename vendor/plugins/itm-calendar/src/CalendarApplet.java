@@ -81,10 +81,9 @@ public class CalendarApplet extends JApplet {
 			
 			if (currentDay.equals(today)) {
 				dayLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-			} else {
-				if (currentDay.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-					dayLabel.setForeground(Color.RED);
-				}
+			}
+			if (currentDay.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+				dayLabel.setForeground(Color.RED);
 			}
 			
 			calendarPanel.add(dayLabel);
