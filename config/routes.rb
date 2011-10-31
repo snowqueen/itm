@@ -1,5 +1,7 @@
 Itm::Application.routes.draw do 
 
+  get "feed/rss"
+
   get "search/index"
 
   namespace 'admin' do

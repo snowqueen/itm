@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :summary
       t.text :content
       t.boolean :published
-      t.date :publish_date
+      t.datetime :publish_date
       t.string :slug
       t.boolean :comments_allowed
       t.integer :author_id

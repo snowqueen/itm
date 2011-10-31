@@ -17,6 +17,7 @@
       </script>
     <% end %>
     <%= csrf_meta_tags %>
+    <%= auto_discovery_link_tag(:rss, {:controller => "feed", :action => "rss", :format => "xml"}) %>
   </head>
   <body>
 
@@ -139,6 +140,9 @@
       <% if @current_user %>
         <p style="font-size: smaller">Current: <%= link_to  @current_user.name, @current_user %></p>
       <% end %>
+      <a href="http://feedvalidator.org/check.cgi?url=<%= feed_rss_url(:format => :xml) %>">
+        <%= image_tag "valid-rss-rogers.png", :alt => "[Valid RSS]", :title => "Validate my RSS feed" %>
+      </a>
     </div>
     <!-- end #footer -->
     <script type="text/javascript" >
