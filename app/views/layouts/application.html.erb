@@ -17,7 +17,7 @@
       </script>
     <% end %>
     <%= csrf_meta_tags %>
-    <%= auto_discovery_link_tag(:rss, {:controller => "feed", :action => "rss", :format => "xml"}) %>
+    <%= auto_discovery_link_tag(:rss, {:controller => "/feed", :action => "rss", :format => "xml"}) %>
   </head>
   <body>
 
