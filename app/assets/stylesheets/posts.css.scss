@@ -11,7 +11,8 @@ h1 {
 
 h1.category-title {
     font-size: 32px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: solid 1px black;
 }
 
 h2 {
@@ -93,4 +94,12 @@ a:hover {
 	padding-top: 20px;
 	font-size: 12px;
 	font-weight: bold;
+}
+
+.post span.category {
+    float: right;
+}
+
+.post span.lower {
+    font-size: 42%;
 }

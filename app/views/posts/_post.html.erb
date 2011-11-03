@@ -1,4 +1,7 @@
 <div class="post">
+  <% if post.category %>
+    <span class="category"><%= link_to post.category, {:controller => :page, :category => post.category} %></span>
+  <% end %>
   <h2 class="title"><%= link_to post.title, slug_path(post) %></h2>
   <p class="meta"><span class="date"><%= l(post.publish_date, :format => :long) %></span><span class="posted">Posted by <a href="#"><%= post.author.name %></a></span></p>
   <div style="clear: both;">&nbsp;</div>

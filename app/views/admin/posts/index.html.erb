@@ -14,43 +14,15 @@
                 <%= post.summary.html_safe %>
             </div>
             <div class="buttons">
-            <%= link_to 'Show', [:admin, post] %> | 
+            <%= link_to 'Show', slug_path(post) %> |
             <%= link_to 'Edit', edit_admin_post_path(post) %> |
             <%= link_to 'Destroy', [:admin, post], confirm: 'Are you sure?', method: :delete %>
             </div>
         </div>
     <% end %>
 </div>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Summary</th>
-    <th>Published</th>
-    <th>Publish date</th>
-    <th>Slug</th>
-    <th>Comments allowed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= truncate(strip_tags(post.summary), :length => 50, :omission => "..." ).html_safe %></td>
-    <td><%= post.published %></td>
-    <td><%= post.publish_date %></td>
-    <td><%= post.slug %></td>
-    <td><%= post.comments_allowed %></td>
-    <td><%= link_to 'Show', [:admin, post] %></td>
-    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-    <td><%= link_to 'Destroy', [:admin, post], confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Post', new_admin_post_path %>
-<!--div style="clear: both;">&nbsp;</div-->
+<%= page_entries_info @posts %>
+<%= will_paginate @posts %>
