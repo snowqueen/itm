@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
 
   has_many :comments, :order => "updated_at"
 
-  scope :published, where('published = ? and publish_date < ?', true, Time.now).order("publish_date DESC")
+  scope :published, lambda { |published = true| where('published = ? and publish_date < ?', published, Time.now).order("publish_date DESC")}
 
   scope :with_category, lambda { |category| where('category = ?', category) }
 

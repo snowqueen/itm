@@ -1,4 +1,13 @@
 <h1>Listing posts</h1>
+<div class="post-filter">
+  <%= form_tag admin_posts_path, :method => 'get' do %>
+    Kategóriák:
+    <%= select_tag "category_filter", options_for_select(Post::CATEGORIES, params[:category_filter]), :prompt => "Mind" %>
+    Publikáltak:
+    <%= check_box_tag 'published_only', '1',  params[:published_only] == '1' %>
+    <%= submit_tag "OK", :name => nil, :id => 'filter-submit' %>
+  <% end %>
+</div>
 
 <div id="post-list">
     <% @posts.each do |post| %>
@@ -16,7 +25,7 @@
             <div class="buttons">
             <%= link_to 'Show', slug_path(post) %> |
             <%= link_to 'Edit', edit_admin_post_path(post) %> |
-            <%= link_to 'Destroy', [:admin, post], confirm: 'Are you sure?', method: :delete %>
+            <%= link_to 'Destroy', [:admin, post], confirm: 'Biztosan törlöd?', method: :delete %>
             </div>
         </div>
     <% end %>

@@ -2,7 +2,16 @@ class Admin::PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 10)
+    filter = params[:category_filter] || ""
+    published_only = params[:published_only] == '1'
+
+    logger.info "Published_only: '#{published_only}'"
+
+    if !filter.empty?
+      @posts = Post.published(published_only).with_category(params[:category_filter]).paginate(:page => params[:page], :per_page => 10)
+    else
+      @posts = Post.published(published_only).paginate(:page => params[:page], :per_page => 10)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,8 +66,8 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to [:admin, @post], notice: 'Post was successfully created.' }
-        format.json { render json: [:admin, @post], status: :created, location: @post }
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -73,7 +82,7 @@ class Admin::PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -89,7 +98,7 @@ class Admin::PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to admin_posts_url }
       format.json { head :ok }
     end
   end
