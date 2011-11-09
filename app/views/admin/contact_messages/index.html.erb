@@ -1,0 +1,28 @@
+<h1>Listing contact_messages</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Subject</th>
+    <th>Message</th>
+    <th>Read?</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contact_messages.each do |contact_message| %>
+  <tr>
+    <td><%= h contact_message.name %></td>
+    <td><%= h contact_message.email %></td>
+    <td><%= h contact_message.subject %></td>
+    <td><%= h contact_message.message %></td>
+    <td><%= check_box_tag 'read', '1',  contact_message.read, :disabled => true %></td>
+    <td><%= link_to 'Show', [:admin, contact_message] %></td>
+    <td><%= link_to 'Destroy', [:admin, contact_message], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

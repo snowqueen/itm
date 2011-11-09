@@ -1,5 +1,8 @@
 Itm::Application.routes.draw do 
 
+  resources :contact_messages, :only => [:new, :create]
+  get "kapcsolat", {:controller => :contact_messages, :action => :new}
+  
   get "feed/rss"
 
   get "search/index"
@@ -7,7 +10,8 @@ Itm::Application.routes.draw do
   namespace 'admin' do
     resources :posts
     resources :comments
-    
+    resources :contact_messages
+
     root :to => 'dashboard#index'
   end
 
