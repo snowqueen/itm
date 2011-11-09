@@ -44,3 +44,5 @@ gem 'execjs'
 gem 'therubyracer'
 
 gem 'will_paginate', '~> 3.0.2'
+
+gem 'galetahub-simple_captcha', :require => 'simple_captcha'

@@ -229,3 +229,7 @@
 
       multi_page: "%{from} - %{to} oldal a(z) %{count} oldalból"
       multi_page_html: "<b>%{from}&nbsp;-&nbsp;%{to}</b> oldal a(z) <b>%{count}</b> oldalból"
+  simple_captcha:
+    label: "Írja be a fenti képen szereplő karaktereket"
+    message:
+      contactmessage: "A megadott kód nem egyezik!"

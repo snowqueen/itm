@@ -29,7 +29,7 @@ class ContactMessagesController < ApplicationController
     @contact_message = ContactMessage.new(params[:contact_message])
 
     respond_to do |format|
-      if @contact_message.save
+      if @contact_message.save_with_captcha
         format.html { redirect_to kapcsolat_url, notice: 'Contact message was successfully created.' }
         format.json { render json: @contact_message, status: :created, location: @contact_message }
       else

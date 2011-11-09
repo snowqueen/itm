@@ -47,6 +47,7 @@ GEM
     eventmachine (0.12.10)
     execjs (1.2.9)
       multi_json (~> 1.0)
+    galetahub-simple_captcha (0.1.2)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.16)
@@ -131,6 +132,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.0)
   execjs
+  galetahub-simple_captcha
   jquery-rails
   mysql2
   paperclip (~> 2.4)
