@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  apply_simple_captcha
+
   validates :name, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true, :email => true
 

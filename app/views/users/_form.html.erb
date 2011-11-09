@@ -33,6 +33,9 @@
       <%= f.check_box :admin %>
     </div>
   <% end %>
+  <div>
+    <%= show_simple_captcha(:object=>"contact_message") %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

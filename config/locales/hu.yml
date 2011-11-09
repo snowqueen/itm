@@ -233,3 +233,4 @@
     label: "Írja be a fenti képen szereplő karaktereket"
     message:
       contactmessage: "A megadott kód nem egyezik!"
+      user: "A megadott kód nem egyezik!"
