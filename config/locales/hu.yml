@@ -201,6 +201,15 @@
       even: "páros kell legyen"
 
   activerecord:
+    models:
+      user: Felhasználó
+    attributes:
+      user:
+        name: Név
+        email: Email
+        password: Jelszó
+        password_confirmation: "Jelszó megerősítése"
+
     errors:
       template:
         header:
@@ -229,8 +238,19 @@
 
       multi_page: "%{from} - %{to} oldal a(z) %{count} oldalból"
       multi_page_html: "<b>%{from}&nbsp;-&nbsp;%{to}</b> oldal a(z) <b>%{count}</b> oldalból"
+
   simple_captcha:
-    label: "Írja be a fenti képen szereplő karaktereket"
+    label: "Írja be a fenti képen szereplő betűket"
     message:
-      contactmessage: "A megadott kód nem egyezik!"
-      user: "A megadott kód nem egyezik!"
+      contactmessage: " kód nem egyezik!"
+      user: " kód nem egyezik!"
+
+  users:
+    new:
+      title: Regisztráció
+      back: Vissza
+      errors:
+        template:
+          header:
+            one: "Az alábbi hiba miatt nem sikerült a regisztráció:"
+            other: "Az alábbi %{count} hiba miatt nem sikerült regisztráció:"

@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
   apply_simple_captcha
 
   validates :name, :presence => true, :uniqueness => true
-  validates :email, :presence => true, :uniqueness => true, :email => true
+  validates :email, :presence => true, :uniqueness => true, :email => {:message => "Anyam borogass!"}
 
-  validates :password, :confirmation => true
+  validates :password, :confirmation => true, :length => {:minimum => 5}
 
   validate :password_must_be_present
 
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
 
   private
     def password_must_be_present
-      errors.add(:password, "Missing password") unless hashed_password.present?
+      errors.add(:password) unless hashed_password.present?
     end
 
     def generate_salt

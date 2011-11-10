@@ -2,6 +2,7 @@ require 'mail'
 
 class EmailValidator < ActiveModel::EachValidator
   def validate_each(record,attribute,value)
+    
     begin
       m = Mail::Address.new(value)
       # We must check that value contains a domain and that value is an email address
@@ -17,6 +18,7 @@ class EmailValidator < ActiveModel::EachValidator
     rescue Exception => e
       r = false
     end
-    record.errors[attribute] << (options[:message] || "is invalid") unless r
+    record.errors.add(attribute, :invalid) unless r
+    
   end
 end
