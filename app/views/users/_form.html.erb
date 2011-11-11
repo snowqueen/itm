@@ -10,33 +10,35 @@
       </ul>
     </div>
   <% end %>
-
+<fieldset class="login">
+  <!--legend>Registration</legend-->
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
   <% if @current_user && @current_user.admin? %>
     <div class="field">
-      <%= f.label :admin %><br />
+      <%= f.label :admin %>
       <%= f.check_box :admin %>
     </div>
   <% end %>
-  <div>
-    <%= show_simple_captcha(:object=>"contact_message") %>
+  <div class="field">
+    <%= show_simple_captcha(:object=>"user") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => 'register-btn'%>
   </div>
+  </fieldset>
 <% end %>

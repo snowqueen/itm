@@ -208,7 +208,7 @@
         name: Név
         email: Email
         password: Jelszó
-        password_confirmation: "Jelszó megerősítése"
+        password_confirmation: "Jelszó újra"
 
     errors:
       template:
