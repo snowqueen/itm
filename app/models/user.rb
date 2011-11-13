@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   apply_simple_captcha
 
   validates :name, :presence => true, :uniqueness => true
-  validates :email, :presence => true, :uniqueness => true, :email => {:message => "Anyam borogass!"}
+  validates :email, :presence => true, :uniqueness => true, :email => true
 
   validates :password, :confirmation => true, :length => {:minimum => 5}
 
@@ -38,11 +38,11 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    self.admin == 1
+    self.admin
   end
   
   def ensure_an_admin_remains
-    if User.where(:admin => 1).count.zero?
+    if User.where(:admin => true).count.zero?
       raise "Can't delete last admin user!"
     end
   end
