@@ -246,6 +246,8 @@
       user: " kód nem egyezik!"
 
   users:
+    form:
+      register-btn: Regisztráció
     new:
       title: Regisztráció
       back: Vissza
@@ -253,4 +255,4 @@
         template:
           header:
             one: "Az alábbi hiba miatt nem sikerült a regisztráció:"
-            other: "Az alábbi %{count} hiba miatt nem sikerült regisztráció:"
+            other: "Az alábbi %{count} hiba miatt nem sikerült a regisztráció:"

@@ -44,5 +44,7 @@ module Itm
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| if html_tag.include?("input") then "<span class='field_with_errors'>#{html_tag}</span>".html_safe  else "#{html_tag}".html_safe end}
+
   end
 end

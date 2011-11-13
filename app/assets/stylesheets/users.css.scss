@@ -14,8 +14,8 @@ form.new_user {
 	background:url(email2.gif) no-repeat 95% 1em;
 }
 .new_user fieldset div {
-	margin:0.3em 0;
-	clear:both;
+	margin:4px 0;
+	/*clear:both;*/
 }
 
 .new_user label {
@@ -38,8 +38,9 @@ form.new_user {
 	border:1px solid #ddd;
 	background:#fafafa;
 	font:bold 1em arial, sans-serif;
-	-moz-border-radius:0.4em;
-	-khtml-border-radius:0.4em;
+	/*-moz-border-radius:4px;
+	-khtml-border-radius:4px;*/
+        border-radius:4px;
 }
 .new_user input:hover, .new_user input:focus {
 	border-color:#c5c5c5;
@@ -107,19 +108,9 @@ form.new_user {
 	color:#bbb;
 }
 
-#submit-go {
-	margin-top:1em;
-	width:69px;
-	height:26px;
-	text-indent:-9999px;
-	overflow:hidden;
-	border:0;
-	background:url(../gfx/submit-button.gif) no-repeat 0 0;
-	display:block;
-	cursor:pointer !important; cursor:hand;
-}
-#submit-go:hover {
-	background-position:0 -26px;
+#register-btn {
+    margin-left: 115px;
+    margin-top: 20px;
 }
 
 /*
