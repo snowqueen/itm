@@ -7,34 +7,31 @@ form.new_user {
         color: black;
         line-height:20px;
 }
-.new_user .login {
+.new_user .register {
 	background:url(user.gif) no-repeat 95% 1em;
 }
-.new_user .contact {
-	background:url(email2.gif) no-repeat 95% 1em;
-}
-.new_user fieldset div {
+
+fieldset div {
 	margin:4px 0;
 	/*clear:both;*/
 }
 
-.new_user label {
+label {
 	float:left;
 	width:100px;
 	text-align:right;
 	margin-right:1em;
 }
-.new_user legend {
+legend {
         color: #023848;
 	font-size:1.2em;
 }
-.new_user legend span {
+legend span {
 	width:10em;
 	text-align:right;
 }
-.new_user input {
+input {
 	padding:0.15em;
-	width:200px;
 	border:1px solid #ddd;
 	background:#fafafa;
 	font:bold 1em arial, sans-serif;
@@ -42,67 +39,24 @@ form.new_user {
 	-khtml-border-radius:4px;*/
         border-radius:4px;
 }
-.new_user input:hover, .new_user input:focus {
+
+.field input {
+    width:200px;
+ }
+
+input:hover, .new_user input:focus {
 	border-color:#c5c5c5;
 	background:#f6f6f6;
 }
-.new_user fieldset {
+fieldset {
 	border:1px solid #ddd;
 	padding:6px;
 }
-.new_user .date input {
-	background-image:url(../gfx/calendar-small.gif);
-	background-repeat:no-repeat;
-	background-position:100% 50%;
+
+.actions {
+    margin-top: 20px;
 }
 
-.new_user .date fieldset label {
-	float:none;
-	display:block;
-	text-align:left;
-	width:auto;
-}
-.new_user .date fieldset div {
-	float:left;
-	clear:none;
-	margin-right:0.2em;
-}
-.new_user .radio, .date {
-	position:relative;
-}
-.new_user .radio fieldset, .date fieldset {
-	border:none;
-	width:auto;
-	padding:1px 0 0 11em;
-}
-.new_user .radio legend, .new_user .date legend {
-	font-size:1em;
-	color:#000;
-}
-.new_user .radio legend span, .new_user .date legend span {
-	position:absolute;
-	left:0;
-	top:0.3em;
-	width:10em;
-	display:block;
-}
-.new_user .radio label, .new_user .radio input {
-	vertical-align:middle;
-	display:inline;
-	float:none;
-	width:auto;
-	background:none;
-	border:none;
-}
-.new_user .radio div {
-	float:left;
-	white-space:nowrap;
-	clear:none;
-}
-
-.new_user .email {
-	width:14em;
-}
 
 .new_user input.default {
 	color:#bbb;
@@ -110,7 +64,23 @@ form.new_user {
 
 #register-btn {
     margin-left: 115px;
-    margin-top: 20px;
+    width:200px;
+}
+
+#login-box {
+    margin-bottom: 35px;
+}
+
+#login-box label {
+    width: 70px;
+}
+
+#login-box input {
+    width: 160px;
+}
+
+#login-btn {
+    width: 90px !important;
 }
 
 /*

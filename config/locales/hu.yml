@@ -245,6 +245,14 @@
       contactmessage: " kód nem egyezik!"
       user: " kód nem egyezik!"
 
+  layouts:
+    application:
+      login: "Lépj be"
+      please_login: Bejelentkezés
+      or: vagy
+      register: regisztrálj!
+      name: Név
+      password: Jelszó
   users:
     form:
       register-btn: Regisztráció

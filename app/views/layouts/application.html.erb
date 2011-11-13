@@ -65,7 +65,6 @@
                   <div style="clear: both;">&nbsp;</div>
                 </li>
                 <li>
-                  <h2>Login</h2>
                   <p id="alert"><%= alert %></p>
                   <div id="login-box">
                     <% if @current_user %>
@@ -74,20 +73,20 @@
                     <% else %>
                       <%= form_tag login_path do %>
                         <fieldset>
-                          <legend>Please log in</legend>
+                          <legend><%= t('.please_login') %></legend>
 
                           <div>
-                            <label for="name">Name:</label>
+                            <label for="name"><%= t('.name') %>:</label>
                             <%= text_field_tag :name, params[:name] %>
                           </div>
 
                           <div>
-                            <label for="password">Password:</label>
+                            <label for="password"><%= t('.password') %>:</label>
                             <%= password_field_tag :password, params[:password] %>
                           </div>
 
-                          <div>
-                            <%= submit_tag 'Login' %> or <%= link_to 'Register', register_path %>
+                          <div class="actions">
+                            <%= submit_tag t('.login'), :id => 'login-btn' %> <%= t('.or') %> <%= link_to t('.register'), register_path %>
                           </div>
                         </fieldset>
                       <% end %>
