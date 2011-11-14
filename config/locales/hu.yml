@@ -253,6 +253,7 @@
       register: regisztrálj!
       name: Név
       password: Jelszó
+      logout: Kijelentkezés
   users:
     form:
       register-btn: Regisztráció

@@ -26,7 +26,7 @@
     <% if @current_user %>
       <%= render :partial => 'comments/form' unless params[:edit_comment] %>
     <% else %>
-      A kommenteléshez be kell <%= link_to 'jelentkezned', login_path %>!
+      A kommenteléshez be kell <%= link_to 'jelentkezned', login_path(:redirect_to => slug_path(@post)) %>!
     <% end %>
   </div>
 <% end %>

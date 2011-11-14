@@ -1,6 +1,7 @@
 <p id="alert"><%= alert %></p>
 <div>
   <%= form_tag do %>
+    <%= hidden_field_tag 'redirect_to', params[:redirect_to] if params[:redirect_to] %>
     <fieldset>
       <legend>Please log in</legend>
 

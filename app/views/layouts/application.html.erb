@@ -68,10 +68,20 @@
                   <p id="alert"><%= alert %></p>
                   <div id="login-box">
                     <% if @current_user %>
-                      Welcome back, <%= @current_user.name %>!<br/>
-                      <%= button_to 'Logout', logout_path, :method => :delete %>
+                      <div id="user-info">                     
+                        <div>
+                          <div class="welcome-text">Welcome back,</div>
+                          <%= image_tag 'user-info-cut.png' %>
+                          <div id="user-name"><%= @current_user.name %>!</div>
+                        </div>
+                        <%= form_tag logout_path, :method => :delete do %>
+                          <%= hidden_field_tag 'redirect_to', request.fullpath %>
+                          <%= submit_tag t('.logout'), :id => 'logout-btn' %>
+                        <% end %>
+                      </div>
                     <% else %>
                       <%= form_tag login_path do %>
+                        <%= hidden_field_tag 'redirect_to', request.fullpath %>
                         <fieldset>
                           <legend><%= t('.please_login') %></legend>
 
