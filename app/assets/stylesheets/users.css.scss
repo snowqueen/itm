@@ -1,56 +1,56 @@
 form.new_user {
-	background:#fff;
-	padding:1em;
-	/*border:1px solid #eee;*/
-        margin:1em auto;
-	width:35em;
-        color: black;
-        line-height:20px;
+    background:#fff;
+    padding:1em;
+    /*border:1px solid #eee;*/
+    margin:1em auto;
+    width:35em;
+    color: black;
+    line-height:20px;
 }
 .new_user .register {
-	background:url(user.gif) no-repeat 95% 1em;
+    background:url(user.gif) no-repeat 95% 1em;
 }
 
 fieldset div {
-	margin:4px 0;
-	/*clear:both;*/
+    margin:4px 0;
+    /*clear:both;*/
 }
 
 label {
-	float:left;
-	width:100px;
-	text-align:right;
-	margin-right:1em;
+    float:left;
+    width:100px;
+    text-align:right;
+    margin-right:1em;
 }
 legend {
-        color: #023848;
-	font-size:1.2em;
+    color: #023848;
+    font-size:1.2em;
 }
 legend span {
-	width:10em;
-	text-align:right;
+    width:10em;
+    text-align:right;
 }
 input {
-	padding:0.15em;
-	border:1px solid #ddd;
-	background:#fafafa;
-	font:bold 1em arial, sans-serif;
-	/*-moz-border-radius:4px;
-	-khtml-border-radius:4px;*/
-        border-radius:4px;
+    padding:0.15em;
+    border:1px solid #ddd;
+    background:#fafafa;
+    font:bold 1em arial, sans-serif;
+    /*-moz-border-radius:4px;
+    -khtml-border-radius:4px;*/
+    border-radius:4px;
 }
 
 .field input {
     width:200px;
- }
+}
 
 input:hover, .new_user input:focus {
-	border-color:#c5c5c5;
-	background:#f6f6f6;
+    border-color:#c5c5c5;
+    background:#f6f6f6;
 }
 fieldset {
-	border:1px solid #ddd;
-	padding:6px;
+    border:1px solid #ddd;
+    padding:6px;
 }
 
 .actions {
@@ -59,7 +59,7 @@ fieldset {
 
 
 .new_user input.default {
-	color:#bbb;
+    color:#bbb;
 }
 
 #register-btn {
@@ -101,6 +101,15 @@ fieldset {
     padding-top: 20px;
     padding-left: 84px;
     font-size: 200%;
+}
+
+#login-form {
+    background:#fff;
+    padding:1em;
+    margin:1em auto;
+    width:35em;
+    color: black;
+    line-height:20px;
 }
 
 .welcome-text {

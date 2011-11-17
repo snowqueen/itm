@@ -247,13 +247,8 @@
 
   layouts:
     application:
-      login: "Lépj be"
-      please_login: Bejelentkezés
-      or: vagy
-      register: regisztrálj!
-      name: Név
-      password: Jelszó
       logout: Kijelentkezés
+      welcome_back: "Üdvözlünk"
   users:
     form:
       register-btn: Regisztráció
@@ -265,3 +260,17 @@
           header:
             one: "Az alábbi hiba miatt nem sikerült a regisztráció:"
             other: "Az alábbi %{count} hiba miatt nem sikerült a regisztráció:"
+  sessions:
+    form:
+      login: "Lépj be"
+      please_login: Bejelentkezés
+      or: vagy
+      register: regisztrálj!
+      name: Név
+      password: Jelszó
+      logout: Kijelentkezés
+    new:
+      please_login: Bejelentkezés
+      name: Név
+      password: Jelszó
+      login: "Lépj be"

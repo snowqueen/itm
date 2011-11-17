@@ -1,23 +1,4 @@
 <p id="alert"><%= alert %></p>
-<div>
-  <%= form_tag do %>
-    <%= hidden_field_tag 'redirect_to', params[:redirect_to] if params[:redirect_to] %>
-    <fieldset>
-      <legend>Please log in</legend>
-
-      <div>
-        <label for="name">Name:</label>
-        <%= text_field_tag :name, params[:name] %>
-      </div>
-
-      <div>
-        <label for="password">Password:</label>
-        <%= password_field_tag :password, params[:password] %>
-      </div>
-
-      <div>
-        <%= submit_tag 'Login' %>
-      </div>
-    </fieldset>
-  <% end %>
+<div id="login-form">
+  <%= render :partial => 'sessions/form', :locals => { :redirect_to => params[:redirect_to] } %>
 </div>

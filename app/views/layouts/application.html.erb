@@ -70,7 +70,7 @@
                     <% if @current_user %>
                       <div id="user-info">                     
                         <div>
-                          <div class="welcome-text">Welcome back,</div>
+                          <div class="welcome-text"><%= t('.welcome_back') %>,</div>
                           <%= image_tag 'user-info-cut.png' %>
                           <div id="user-name"><%= @current_user.name %>!</div>
                         </div>
@@ -80,26 +80,7 @@
                         <% end %>
                       </div>
                     <% else %>
-                      <%= form_tag login_path do %>
-                        <%= hidden_field_tag 'redirect_to', request.fullpath %>
-                        <fieldset>
-                          <legend><%= t('.please_login') %></legend>
-
-                          <div>
-                            <label for="name"><%= t('.name') %>:</label>
-                            <%= text_field_tag :name, params[:name] %>
-                          </div>
-
-                          <div>
-                            <label for="password"><%= t('.password') %>:</label>
-                            <%= password_field_tag :password, params[:password] %>
-                          </div>
-
-                          <div class="actions">
-                            <%= submit_tag t('.login'), :id => 'login-btn' %> <%= t('.or') %> <%= link_to t('.register'), register_path %>
-                          </div>
-                        </fieldset>
-                      <% end %>
+                      <%= render :partial => 'sessions/form', :locals => { :redirect_to => request.fullpath } %>
                     <% end %>
                   </div>
                 </li>
