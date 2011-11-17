@@ -249,6 +249,7 @@
     application:
       logout: Kijelentkezés
       welcome_back: "Üdvözlünk"
+      search_button: Keres
   users:
     form:
       register-btn: Regisztráció

@@ -281,3 +281,8 @@ body {
 #footer a {
 	color: #8A8A8A;
 }
+
+h2.title a:hover {
+    background-color: white;
+    border-bottom: 1px dashed #023848;
+}
