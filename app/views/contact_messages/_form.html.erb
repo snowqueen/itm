@@ -1,7 +1,7 @@
 <%= form_for(@contact_message) do |f| %>
   <% if @contact_message.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@contact_message.errors.count, "error") %> prohibited this contact_message from being saved:</h2>
+      <h2><%= I18n.t('contact_messages.new.errors.template.header', :count => @contact_message.errors.size) %></h2>
 
       <ul>
       <% @contact_message.errors.full_messages.each do |msg| %>
@@ -10,27 +10,28 @@
       </ul>
     </div>
   <% end %>
-
+<fieldset class="contact">
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :subject %><br />
+    <%= f.label :subject %>
     <%= f.text_field :subject %>
   </div>
   <div class="field">
-    <%= f.label :message %><br />
+    <%= f.label :message %>
     <%= f.text_area :message %>
   </div>
   <div>
     <%= show_simple_captcha(:object=>"contact_message") %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.send-contact'), :id => 'contact-btn' %>
   </div>
+  </fieldset>
 <% end %>

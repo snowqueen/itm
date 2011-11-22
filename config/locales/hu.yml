@@ -203,12 +203,18 @@
   activerecord:
     models:
       user: Felhasználó
+      contact_message: Kapcsolat
     attributes:
       user:
         name: Név
         email: Email
         password: Jelszó
         password_confirmation: "Jelszó újra"
+      contact_message:
+        name: Név
+        email: Email
+        subject: Tárgy
+        message: Üzenet
 
     errors:
       template:
@@ -275,3 +281,14 @@
       name: Név
       password: Jelszó
       login: "Lépj be"
+  contact_messages:
+    form:
+      send-contact: Küldés
+    new:
+      title: Kapcsolat
+      back: Vissza
+      errors:
+        template:
+          header:
+            one: "Az alábbi hiba miatt nem sikerült az üzenetküldés:"
+            other: "Az alábbi %{count} hiba miatt nem sikerült az üzenetküldés:"

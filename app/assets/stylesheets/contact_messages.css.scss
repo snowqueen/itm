@@ -1,3 +1,13 @@
-// Place all the styles related to the ContactMessages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+fieldset.contact {
+    background:url(contact.gif) no-repeat 95% 1em;
+}
+
+#contact_message_message {
+    margin-left: 112px;
+
+}
+
+#contact-btn {
+    margin-left: 115px;
+    width:200px;
+}
