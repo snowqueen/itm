@@ -30,11 +30,8 @@ public class CalendarApplet extends JApplet {
 
 		contentPane.setLayout(new BorderLayout());
 
-		contentPane.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
-		// contentPane.setBackground(Color.blue);
-
 		JLabel dateLabel = new JLabel(dateFormat.format(new Date()), JLabel.CENTER);
-		dateLabel.setToolTipText("Applet version 0.6");
+		dateLabel.setToolTipText("Applet version 0.8");
 		
 		contentPane.add(dateLabel, BorderLayout.NORTH);
 
@@ -49,17 +46,12 @@ public class CalendarApplet extends JApplet {
 
 		Calendar firstDayOfThisMonth = Calendar.getInstance(new Locale("hu"));
 		firstDayOfThisMonth.set(Calendar.DAY_OF_MONTH, 1);
-		//firstDayOfThisMonth.set(Calendar.MONTH, Calendar.DECEMBER);
 		firstDayOfThisMonth.setFirstDayOfWeek(Calendar.MONDAY);
 
-		int gapCount = firstDayOfThisMonth.get(Calendar.DAY_OF_WEEK)
-				- Calendar.MONDAY;
+		int gapCount = firstDayOfThisMonth.get(Calendar.DAY_OF_WEEK) - Calendar.MONDAY;
 		if (gapCount < 0) {
 			gapCount = gapCount + 7;
 		}
-
-		//System.out.println(dateFormat.format(firstDayOfThisMonth.getTime()));
-		//System.out.println("Gapcount=" + gapCount);
 
 		JLabel weekLabel = new JLabel(Integer.toString(firstDayOfThisMonth.get(Calendar.WEEK_OF_YEAR) - 1), JLabel.CENTER);
 		weekLabel.setForeground(Color.GRAY);
@@ -72,7 +64,6 @@ public class CalendarApplet extends JApplet {
 		Calendar currentDay = Calendar.getInstance(new Locale("hu"));
 		currentDay.setFirstDayOfWeek(Calendar.MONDAY);
 		currentDay.set(Calendar.DAY_OF_MONTH, 1);
-		//currentDay.set(Calendar.MONTH, Calendar.DECEMBER);
 		
 		Calendar today = Calendar.getInstance(new Locale("hu"));
 
@@ -81,9 +72,10 @@ public class CalendarApplet extends JApplet {
 			
 			if (currentDay.equals(today)) {
 				dayLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-			}
-			if (currentDay.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-				dayLabel.setForeground(Color.RED);
+			} else {
+				if (currentDay.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+					dayLabel.setForeground(Color.RED);
+				}
 			}
 			
 			calendarPanel.add(dayLabel);
@@ -98,8 +90,7 @@ public class CalendarApplet extends JApplet {
 		}
 		contentPane.add(calendarPanel, BorderLayout.CENTER);
 
-		contentPane.add(new JLabel("Ma " + getNevNap() + " napja van."),
-				BorderLayout.SOUTH);
+		contentPane.add(new JLabel("Ma " + getNevNap() + " napja van."), BorderLayout.SOUTH);
 
 	}
 
@@ -242,6 +233,7 @@ public class CalendarApplet extends JApplet {
 		}
 
 		return napok[ma.get(Calendar.DAY_OF_MONTH) - 1];
+		
 	}
 
 	@Override
