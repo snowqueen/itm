@@ -26,9 +26,7 @@
         <ul>
           <li class="current_page_item"><%= link_to 'Főoldal', root_path %></li>
           <li><a href="http://itmenedzsment.blogspot.com/">Blog</a></li>
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Links</a></li>
+          <li><a href="#">Elhelyezkedés</a></li>
           <li><%= link_to 'Kapcsolat', kapcsolat_url %></li>
           <% if @current_user && @current_user.admin? %>
             <li class="admin"><%= link_to 'Admin', admin_root_path %></li>
