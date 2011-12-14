@@ -234,16 +234,16 @@
     page_gap: "&hellip;"
     page_entries_info:
       single_page:
-        zero:  "Nincsenek oldalak"
+        zero:  "Nincsenek megjeleníthető oldalak"
         one:   "1 oldal látható"
-        other: "Mind a(z) %{count} oldal látható"
+        other: "Összesen %{count} oldal látható"
       single_page_html:
-        zero:  "Nincsenek oldalak"
+        zero:  "Nincsenek megjeleníthető oldalak"
         one:   "<b>1</b> oldal látható"
-        other: "Mind a(z) <b>%{count}</b> oldal látható"
+        other: "Összesen <b>%{count}</b> oldal látható"
 
-      multi_page: "%{from} - %{to} oldal a(z) %{count} oldalból"
-      multi_page_html: "<b>%{from}&nbsp;-&nbsp;%{to}</b> oldal a(z) <b>%{count}</b> oldalból"
+      multi_page: "%{from} - %{to} oldalak a(z) %{count} oldalból"
+      multi_page_html: "<b>%{from}&nbsp;-&nbsp;%{to}</b> oldalak a(z) <b>%{count}</b> oldalból"
 
   simple_captcha:
     label: "Írja be a fenti képen szereplő betűket"
