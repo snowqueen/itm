@@ -16,6 +16,13 @@ class PostsController < ApplicationController
     elsif params[:slug]
       @post = Post.where("slug = ?", params[:slug]).first
     end
+
+    if !@post
+      logger.info "No page with slug #{params[:slug]}"
+      redirect_to root_path
+      return
+    end
+
     if params[:edit_comment]
       @comment = Comment.find(params[:edit_comment])
     else
