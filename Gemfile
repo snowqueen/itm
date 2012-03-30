@@ -11,6 +11,7 @@ end
 group :production do
   gem 'pg'
   gem 'thin'
+  gem 'newrelic_rpm'
 end
 
 gem "paperclip", "~> 2.4"
